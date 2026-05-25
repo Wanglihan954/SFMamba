@@ -1,0 +1,346 @@
+/home/ly/9100pro/Reg/JamMa/src/jamma/utils/utils.py:17: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  @torch.cuda.amp.custom_fwd(cast_inputs=torch.float32)
+/home/ly/miniconda3/envs/jamma/lib/python3.10/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+{'accelerator': 'ddp',
+ 'batch_size': 2,
+ 'benchmark': True,
+ 'check_val_every_n_epoch': 1,
+ 'ckpt_path': None,
+ 'data_cfg_path': 'configs/data/megadepth_trainval_832.py',
+ 'disable_ckpt': False,
+ 'dump_dir': None,
+ 'exp_name': 'jamma',
+ 'flush_logs_every_n_steps': 1000,
+ 'gpus': 1,
+ 'limit_val_batches': 1.0,
+ 'log_every_n_steps': 1000,
+ 'main_cfg_path': 'configs/jamma/outdoor/final.py',
+ 'max_epochs': 30,
+ 'num_nodes': 1,
+ 'num_sanity_val_steps': 10,
+ 'num_workers': 4,
+ 'parallel_load_data': False,
+ 'pin_memory': True,
+ 'profiler_name': None}
+Seed set to 66
+number of params: 5.874339
+2026-03-27 13:30:18.522 | INFO     | __main__:main:71 - LoFTR LightningModule initialized!
+2026-03-27 13:30:18.522 | INFO     | __main__:main:75 - LoFTR DataModule initialized!
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+2026-03-27 13:30:18.544 | INFO     | __main__:main:120 - Trainer initialized!
+2026-03-27 13:30:18.544 | INFO     | __main__:main:121 - Start training!
+You are using a CUDA device ('NVIDIA GeForce RTX 5090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+Initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/1
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 1 processes
+----------------------------------------------------------------------------------------------------
+
+2026-03-27 13:30:19.025882: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-03-27 13:30:19.055186: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-03-27 13:30:19.570964: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-03-27 13:30:19.630 | INFO     | src.lightning.data:setup:118 - [rank:0] world_size: 1
+2026-03-27 13:30:19.631 | INFO     | src.lightning.data:_setup_dataset:184 - [rank 0]: 368 scene(s) assigned.
+[rank:0] loading train datasets:   0%|          | 0/368 [00:00<?, ?it/s][rank:0] loading train datasets:   0%|          | 1/368 [00:00<01:00,  6.09it/s][rank:0] loading train datasets:   2%|▏         | 7/368 [00:00<00:11, 30.74it/s][rank:0] loading train datasets:   4%|▎         | 13/368 [00:00<00:09, 39.04it/s][rank:0] loading train datasets:   6%|▌         | 21/368 [00:00<00:06, 51.04it/s][rank:0] loading train datasets:   7%|▋         | 27/368 [00:00<00:09, 37.39it/s][rank:0] loading train datasets:   9%|▊         | 32/368 [00:00<00:10, 32.08it/s][rank:0] loading train datasets:  11%|█▏        | 42/368 [00:01<00:17, 18.63it/s][rank:0] loading train datasets:  12%|█▏        | 45/368 [00:02<00:26, 12.41it/s][rank:0] loading train datasets:  14%|█▍        | 52/368 [00:02<00:20, 15.65it/s][rank:0] loading train datasets:  15%|█▍        | 55/368 [00:02<00:18, 16.82it/s][rank:0] loading train datasets:  16%|█▌        | 59/368 [00:03<00:18, 16.59it/s][rank:0] loading train datasets:  18%|█▊        | 66/368 [00:03<00:12, 23.55it/s][rank:0] loading train datasets:  20%|█▉        | 72/368 [00:03<00:10, 29.07it/s][rank:0] loading train datasets:  21%|██        | 77/368 [00:03<00:10, 26.69it/s][rank:0] loading train datasets:  22%|██▏       | 81/368 [00:03<00:13, 21.17it/s][rank:0] loading train datasets:  23%|██▎       | 84/368 [00:03<00:12, 22.45it/s][rank:0] loading train datasets:  24%|██▎       | 87/368 [00:04<00:14, 19.78it/s][rank:0] loading train datasets:  24%|██▍       | 90/368 [00:04<00:17, 15.73it/s][rank:0] loading train datasets:  27%|██▋       | 99/368 [00:06<00:33,  7.98it/s][rank:0] loading train datasets:  27%|██▋       | 101/368 [00:06<00:30,  8.64it/s][rank:0] loading train datasets:  29%|██▉       | 106/368 [00:06<00:22, 11.90it/s][rank:0] loading train datasets:  30%|███       | 112/368 [00:06<00:15, 16.70it/s][rank:0] loading train datasets:  32%|███▏      | 119/368 [00:06<00:11, 22.09it/s][rank:0] loading train datasets:  34%|███▍      | 125/368 [00:06<00:10, 22.38it/s][rank:0] loading train datasets:  35%|███▌      | 129/368 [00:07<00:16, 14.62it/s][rank:0] loading train datasets:  36%|███▌      | 132/368 [00:07<00:17, 13.75it/s][rank:0] loading train datasets:  39%|███▊      | 142/368 [00:07<00:11, 19.38it/s][rank:0] loading train datasets:  39%|███▉      | 145/368 [00:08<00:11, 19.88it/s][rank:0] loading train datasets:  41%|████      | 150/368 [00:08<00:09, 23.56it/s][rank:0] loading train datasets:  42%|████▏     | 154/368 [00:08<00:09, 23.38it/s][rank:0] loading train datasets:  45%|████▌     | 167/368 [00:08<00:05, 34.91it/s][rank:0] loading train datasets:  46%|████▋     | 171/368 [00:08<00:06, 30.26it/s][rank:0] loading train datasets:  48%|████▊     | 178/368 [00:08<00:05, 35.28it/s][rank:0] loading train datasets:  49%|████▉     | 182/368 [00:09<00:05, 34.06it/s][rank:0] loading train datasets:  51%|█████     | 186/368 [00:09<00:08, 20.97it/s][rank:0] loading train datasets:  52%|█████▏    | 190/368 [00:09<00:07, 23.53it/s][rank:0] loading train datasets:  54%|█████▍    | 198/368 [00:09<00:05, 33.21it/s][rank:0] loading train datasets:  55%|█████▌    | 203/368 [00:11<00:18,  9.04it/s][rank:0] loading train datasets:  57%|█████▋    | 211/368 [00:11<00:11, 13.61it/s][rank:0] loading train datasets:  59%|█████▊    | 216/368 [00:11<00:11, 13.51it/s][rank:0] loading train datasets:  60%|█████▉    | 220/368 [00:12<00:11, 12.47it/s][rank:0] loading train datasets:  64%|██████▎   | 234/368 [00:12<00:05, 24.06it/s][rank:0] loading train datasets:  65%|██████▌   | 241/368 [00:12<00:04, 29.33it/s][rank:0] loading train datasets:  67%|██████▋   | 248/368 [00:12<00:04, 28.59it/s][rank:0] loading train datasets:  70%|██████▉   | 257/368 [00:13<00:04, 24.62it/s][rank:0] loading train datasets:  73%|███████▎  | 268/368 [00:13<00:02, 34.38it/s][rank:0] loading train datasets:  75%|███████▌  | 277/368 [00:13<00:02, 32.66it/s][rank:0] loading train datasets:  77%|███████▋  | 283/368 [00:13<00:02, 31.55it/s][rank:0] loading train datasets:  78%|███████▊  | 288/368 [00:13<00:02, 33.52it/s][rank:0] loading train datasets:  80%|███████▉  | 293/368 [00:14<00:05, 14.06it/s][rank:0] loading train datasets:  81%|████████  | 297/368 [00:15<00:04, 15.74it/s][rank:0] loading train datasets:  82%|████████▏ | 301/368 [00:15<00:04, 16.24it/s][rank:0] loading train datasets:  84%|████████▍ | 309/368 [00:15<00:03, 18.70it/s][rank:0] loading train datasets:  85%|████████▌ | 313/368 [00:15<00:02, 20.63it/s][rank:0] loading train datasets:  86%|████████▌ | 316/368 [00:16<00:03, 16.76it/s][rank:0] loading train datasets:  88%|████████▊ | 325/368 [00:16<00:01, 22.82it/s][rank:0] loading train datasets:  92%|█████████▏| 339/368 [00:16<00:00, 38.80it/s][rank:0] loading train datasets:  96%|█████████▌| 353/368 [00:16<00:00, 51.02it/s][rank:0] loading train datasets:  98%|█████████▊| 360/368 [00:16<00:00, 53.07it/s][rank:0] loading train datasets: 100%|█████████▉| 367/368 [00:16<00:00, 38.21it/s][rank:0] loading train datasets: 100%|██████████| 368/368 [00:16<00:00, 21.68it/s]
+2026-03-27 13:30:36.607 | INFO     | src.lightning.data:_setup_dataset:184 - [rank 0]: 5 scene(s) assigned.
+[rank:0] loading val datasets:   0%|          | 0/5 [00:00<?, ?it/s][rank:0] loading val datasets: 100%|██████████| 5/5 [00:00<00:00, 1176.65it/s]
+2026-03-27 13:30:36.611 | INFO     | src.lightning.data:setup:156 - [rank:0] Train & Val Dataset loaded!
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┓
+┃   ┃ Name     ┃ Type           ┃ Params ┃ Mode  ┃ FLOPs ┃
+┡━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━┩
+│ 0 │ backbone │ CovNextV2_nano │  650 K │ train │     0 │
+│ 1 │ matcher  │ JamMa          │  5.2 M │ train │     0 │
+│ 2 │ loss     │ Loss           │      0 │ train │     0 │
+└───┴──────────┴────────────────┴────────┴───────┴───────┘
+Trainable params: 5.9 M                                                         
+Non-trainable params: 0                                                         
+Total params: 5.9 M                                                             
+Total estimated model params size (MB): 23                                      
+Modules in train mode: 204                                                      
+Modules in eval mode: 0                                                         
+Total FLOPs: 0                                                                  
+2026-03-27 13:30:36.641 | INFO     | src.lightning.data:val_dataloader:302 - [rank:0/1]: Val Sampler and DataLoader re-init.
+/home/ly/miniconda3/envs/jamma/lib/python3.10/site-packages/pytorch_lightning/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+2026-03-27 13:30:42.355 | WARNING  | src.jamma.matching_module:forward:300 - No matches found in coarse-level.
+2026-03-27 13:30:42.417 | WARNING  | src.jamma.matching_module:forward:300 - No matches found in coarse-level.
+2026-03-27 13:30:42.423 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 2 unique items...
+{'auc@5': np.float64(0.0), 'auc@10': np.float64(0.0), 'auc@20': np.float64(0.0), 'prec@1e-04': np.float64(0.0), 'rec@1e-04': np.float64(0.0), 'max_matches@1e-04': np.float64(3272.0), 'num_matches@1e-04': np.float64(0.0), 'precision': tensor(0., device='cuda:0'), 'recall': tensor(0., device='cuda:0'), 'f1_score': tensor(0., device='cuda:0')}
+/home/ly/miniconda3/envs/jamma/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/logger_connector/result.py:433: It is recommended to use `self.log('auc@5', ..., sync_dist=True)` when logging on epoch level in distributed setting to accumulate the metric across devices.
+/home/ly/miniconda3/envs/jamma/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/logger_connector/result.py:433: It is recommended to use `self.log('auc@10', ..., sync_dist=True)` when logging on epoch level in distributed setting to accumulate the metric across devices.
+/home/ly/miniconda3/envs/jamma/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/logger_connector/result.py:433: It is recommended to use `self.log('auc@20', ..., sync_dist=True)` when logging on epoch level in distributed setting to accumulate the metric across devices.
+2026-03-27 13:30:42.438 | INFO     | src.lightning.data:train_dataloader:289 - [rank:0/1]: Train Sampler and DataLoader re-init (should not re-init between epochs!).
+/home/ly/miniconda3/envs/jamma/lib/python3.10/site-packages/pytorch_lightning/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+/home/ly/miniconda3/envs/jamma/lib/python3.10/site-packages/torch/autograd/graph.py:865: UserWarning: The AccumulateGrad node's stream does not match the stream of the node that produced the incoming gradient. This may incur unnecessary synchronization and break CUDA graph capture if the AccumulateGrad node's stream is the default stream. This mismatch is caused by an AccumulateGrad node created prior to the current iteration being kept alive. This can happen if the autograd graph is still being kept alive by tensors such as the loss, or if you are using DDP, which will stash a reference to the node. To resolve the mismatch, delete all references to the autograd graph or ensure that DDP initialization is performed under the same stream as subsequent forwards. If the mismatch is intentional, you can use torch.autograd.graph.set_warn_on_accumulate_grad_stream_mismatch(False) to suppress this warning. (Triggered internally at /pytorch/torch/csrc/autograd/input_buffer.cpp:240.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+2026-03-27 15:02:57.628 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.488317009113502), 'auc@10': np.float64(0.6330422437295413), 'auc@20': np.float64(0.7440574641642312), 'prec@1e-04': np.float64(0.765757644412208), 'rec@1e-04': np.float64(1.0037519331269644), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(3296.1086666666665), 'precision': tensor(0.4232, device='cuda:0'), 'recall': tensor(0.5878, device='cuda:0'), 'f1_score': tensor(0.4832, device='cuda:0')}
+Epoch 0, global step 18400: 'auc@10' reached 0.63304 (best 0.63304), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma/version_10/checkpoints/epoch=0-auc@5=0.488-auc@10=0.633-auc@20=0.744.ckpt' as top 3
+2026-03-27 16:21:24.299 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.5819601892351294), 'auc@10': np.float64(0.7166524682415385), 'auc@20': np.float64(0.8131452039341364), 'prec@1e-04': np.float64(0.8082994386132107), 'rec@1e-04': np.float64(1.1549620289425682), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(3672.382666666667), 'precision': tensor(0.4375, device='cuda:0'), 'recall': tensor(0.6426, device='cuda:0'), 'f1_score': tensor(0.5130, device='cuda:0')}
+Epoch 1, global step 36800: 'auc@10' reached 0.71665 (best 0.71665), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma/version_10/checkpoints/epoch=1-auc@5=0.582-auc@10=0.717-auc@20=0.813.ckpt' as top 3
+2026-03-27 17:38:13.677 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6000230137786473), 'auc@10': np.float64(0.7331369618819104), 'auc@20': np.float64(0.8304388390536545), 'prec@1e-04': np.float64(0.8254984737005535), 'rec@1e-04': np.float64(1.2024559380607809), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(3784.6493333333333), 'precision': tensor(0.4393, device='cuda:0'), 'recall': tensor(0.6673, device='cuda:0'), 'f1_score': tensor(0.5230, device='cuda:0')}
+Epoch 2, global step 55200: 'auc@10' reached 0.73314 (best 0.73314), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma/version_10/checkpoints/epoch=2-auc@5=0.600-auc@10=0.733-auc@20=0.830.ckpt' as top 3
+2026-03-27 18:53:26.899 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6270297778588949), 'auc@10': np.float64(0.7575986920898848), 'auc@20': np.float64(0.8507655083930329), 'prec@1e-04': np.float64(0.8590682962434), 'rec@1e-04': np.float64(1.2312280728849336), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(3734.8553333333334), 'precision': tensor(0.4552, device='cuda:0'), 'recall': tensor(0.6790, device='cuda:0'), 'f1_score': tensor(0.5386, device='cuda:0')}
+Epoch 3, global step 73600: 'auc@10' reached 0.75760 (best 0.75760), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma/version_10/checkpoints/epoch=3-auc@5=0.627-auc@10=0.758-auc@20=0.851.ckpt' as top 3
+2026-03-27 20:08:22.313 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6228426771000475), 'auc@10': np.float64(0.7528487014678449), 'auc@20': np.float64(0.8461400407153239), 'prec@1e-04': np.float64(0.8701262694215284), 'rec@1e-04': np.float64(1.2245487099642496), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(3668.432), 'precision': tensor(0.4663, device='cuda:0'), 'recall': tensor(0.6796, device='cuda:0'), 'f1_score': tensor(0.5460, device='cuda:0')}
+Epoch 4, global step 92000: 'auc@10' reached 0.75285 (best 0.75760), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma/version_10/checkpoints/epoch=4-auc@5=0.623-auc@10=0.753-auc@20=0.846.ckpt' as top 3
+2026-03-27 21:23:20.508 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6296571126362751), 'auc@10': np.float64(0.7584991587954938), 'auc@20': np.float64(0.8504807562461641), 'prec@1e-04': np.float64(0.8746087218698876), 'rec@1e-04': np.float64(1.2465107459691471), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(3709.1646666666666), 'precision': tensor(0.4773, device='cuda:0'), 'recall': tensor(0.6826, device='cuda:0'), 'f1_score': tensor(0.5552, device='cuda:0')}
+Epoch 5, global step 110400: 'auc@10' reached 0.75850 (best 0.75850), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma/version_10/checkpoints/epoch=5-auc@5=0.630-auc@10=0.758-auc@20=0.850.ckpt' as top 3
+2026-03-27 22:41:01.133 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6154266005994737), 'auc@10': np.float64(0.74294536304095), 'auc@20': np.float64(0.8351668032864346), 'prec@1e-04': np.float64(0.8262056115244892), 'rec@1e-04': np.float64(1.3046205883707516), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(4061.3713333333335), 'precision': tensor(0.4209, device='cuda:0'), 'recall': tensor(0.6795, device='cuda:0'), 'f1_score': tensor(0.5134, device='cuda:0')}
+Epoch 6, global step 128800: 'auc@10' was not in top 3
+2026-03-27 23:55:25.830 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6299271775996115), 'auc@10': np.float64(0.7598169585132859), 'auc@20': np.float64(0.8515839823811608), 'prec@1e-04': np.float64(0.913220161708054), 'rec@1e-04': np.float64(1.2407548628098006), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(3554.2453333333333), 'precision': tensor(0.4970, device='cuda:0'), 'recall': tensor(0.6827, device='cuda:0'), 'f1_score': tensor(0.5682, device='cuda:0')}
+Epoch 7, global step 147200: 'auc@10' reached 0.75982 (best 0.75982), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma/version_10/checkpoints/epoch=7-auc@5=0.630-auc@10=0.760-auc@20=0.852.ckpt' as top 3
+2026-03-28 01:11:25.199 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6158436900876656), 'auc@10': np.float64(0.7456123386530569), 'auc@20': np.float64(0.8402925261399785), 'prec@1e-04': np.float64(0.8766917960898029), 'rec@1e-04': np.float64(1.249758274167544), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(3707.6673333333333), 'precision': tensor(0.4678, device='cuda:0'), 'recall': tensor(0.6786, device='cuda:0'), 'f1_score': tensor(0.5468, device='cuda:0')}
+Epoch 8, global step 165600: 'auc@10' was not in top 3
+2026-03-28 02:28:01.863 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6160442120050547), 'auc@10': np.float64(0.7457095981362668), 'auc@20': np.float64(0.84064189845065), 'prec@1e-04': np.float64(0.8534162705483995), 'rec@1e-04': np.float64(1.3530713100874574), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(4106.988), 'precision': tensor(0.4251, device='cuda:0'), 'recall': tensor(0.6952, device='cuda:0'), 'f1_score': tensor(0.5222, device='cuda:0')}
+Epoch 9, global step 184000: 'auc@10' was not in top 3
+2026-03-28 03:44:40.462 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6163963710518517), 'auc@10': np.float64(0.7476881900314696), 'auc@20': np.float64(0.8404757350905827), 'prec@1e-04': np.float64(0.8569506569937363), 'rec@1e-04': np.float64(1.3093083343277578), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(3964.4506666666666), 'precision': tensor(0.4364, device='cuda:0'), 'recall': tensor(0.6847, device='cuda:0'), 'f1_score': tensor(0.5275, device='cuda:0')}
+Epoch 10, global step 202400: 'auc@10' was not in top 3
+2026-03-28 05:00:28.033 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6192827971945992), 'auc@10': np.float64(0.746955328383954), 'auc@20': np.float64(0.8400037024136946), 'prec@1e-04': np.float64(0.8782924479755232), 'rec@1e-04': np.float64(1.3005800635003462), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(3830.11), 'precision': tensor(0.4564, device='cuda:0'), 'recall': tensor(0.6805, device='cuda:0'), 'f1_score': tensor(0.5391, device='cuda:0')}
+Epoch 11, global step 220800: 'auc@10' was not in top 3
+2026-03-28 06:16:05.915 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6229473627127369), 'auc@10': np.float64(0.7536570103736115), 'auc@20': np.float64(0.8464834261257833), 'prec@1e-04': np.float64(0.8745122361856318), 'rec@1e-04': np.float64(1.2965605756057719), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(3841.5933333333332), 'precision': tensor(0.4550, device='cuda:0'), 'recall': tensor(0.6878, device='cuda:0'), 'f1_score': tensor(0.5407, device='cuda:0')}
+Epoch 12, global step 239200: 'auc@10' was not in top 3
+2026-03-28 07:32:34.057 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6300658903456456), 'auc@10': np.float64(0.7577859267778198), 'auc@20': np.float64(0.8481698517670854), 'prec@1e-04': np.float64(0.880043825705444), 'rec@1e-04': np.float64(1.3089137067108134), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(3852.35), 'precision': tensor(0.4615, device='cuda:0'), 'recall': tensor(0.6929, device='cuda:0'), 'f1_score': tensor(0.5474, device='cuda:0')}
+Epoch 13, global step 257600: 'auc@10' reached 0.75779 (best 0.75982), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma/version_10/checkpoints/epoch=13-auc@5=0.630-auc@10=0.758-auc@20=0.848.ckpt' as top 3
+2026-03-28 08:47:42.384 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.633309229336033), 'auc@10': np.float64(0.7656295374378767), 'auc@20': np.float64(0.8560489165893083), 'prec@1e-04': np.float64(0.8769768085462644), 'rec@1e-04': np.float64(1.3671373893727106), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(4034.008), 'precision': tensor(0.4423, device='cuda:0'), 'recall': tensor(0.7046, device='cuda:0'), 'f1_score': tensor(0.5381, device='cuda:0')}
+Epoch 14, global step 276000: 'auc@10' reached 0.76563 (best 0.76563), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma/version_10/checkpoints/epoch=14-auc@5=0.633-auc@10=0.766-auc@20=0.856.ckpt' as top 3
+2026-03-28 10:02:55.231 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6358224608410408), 'auc@10': np.float64(0.7655428550950337), 'auc@20': np.float64(0.8594983870684352), 'prec@1e-04': np.float64(0.8565768345904715), 'rec@1e-04': np.float64(1.3846527099400658), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(4190.7446666666665), 'precision': tensor(0.4292, device='cuda:0'), 'recall': tensor(0.7073, device='cuda:0'), 'f1_score': tensor(0.5291, device='cuda:0')}
+Epoch 15, global step 294400: 'auc@10' reached 0.76554 (best 0.76563), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma/version_10/checkpoints/epoch=15-auc@5=0.636-auc@10=0.766-auc@20=0.859.ckpt' as top 3
+2026-03-28 11:19:46.880 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6121227127072194), 'auc@10': np.float64(0.7417485696358095), 'auc@20': np.float64(0.836229736706143), 'prec@1e-04': np.float64(0.8561348282753115), 'rec@1e-04': np.float64(1.3509952862694365), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(4083.0513333333333), 'precision': tensor(0.4342, device='cuda:0'), 'recall': tensor(0.6905, device='cuda:0'), 'f1_score': tensor(0.5270, device='cuda:0')}
+Epoch 16, global step 312800: 'auc@10' was not in top 3
+2026-03-28 12:34:33.989 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6320335641993736), 'auc@10': np.float64(0.7634828985541735), 'auc@20': np.float64(0.8553032732233838), 'prec@1e-04': np.float64(0.8946305174566229), 'rec@1e-04': np.float64(1.3205780046242401), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(3841.1113333333333), 'precision': tensor(0.4719, device='cuda:0'), 'recall': tensor(0.7016, device='cuda:0'), 'f1_score': tensor(0.5583, device='cuda:0')}
+Epoch 17, global step 331200: 'auc@10' reached 0.76348 (best 0.76563), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma/version_10/checkpoints/epoch=17-auc@5=0.632-auc@10=0.763-auc@20=0.855.ckpt' as top 3
+2026-03-28 13:50:06.092 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6259385537022135), 'auc@10': np.float64(0.7546627061302142), 'auc@20': np.float64(0.848780498663128), 'prec@1e-04': np.float64(0.8772196936663125), 'rec@1e-04': np.float64(1.3470282120400134), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(3993.0253333333335), 'precision': tensor(0.4496, device='cuda:0'), 'recall': tensor(0.7038, device='cuda:0'), 'f1_score': tensor(0.5428, device='cuda:0')}
+Epoch 18, global step 349600: 'auc@10' was not in top 3
+2026-03-28 15:06:04.464 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6363883767114398), 'auc@10': np.float64(0.765715623415032), 'auc@20': np.float64(0.8565734565823394), 'prec@1e-04': np.float64(0.8674377996812384), 'rec@1e-04': np.float64(1.3738268260037396), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(4099.1106666666665), 'precision': tensor(0.4324, device='cuda:0'), 'recall': tensor(0.7070, device='cuda:0'), 'f1_score': tensor(0.5313, device='cuda:0')}
+Epoch 19, global step 368000: 'auc@10' reached 0.76572 (best 0.76572), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma/version_10/checkpoints/epoch=19-auc@5=0.636-auc@10=0.766-auc@20=0.857.ckpt' as top 3
+2026-03-28 16:22:53.381 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6185167670407778), 'auc@10': np.float64(0.7468975044208236), 'auc@20': np.float64(0.8410410226998822), 'prec@1e-04': np.float64(0.87839945665969), 'rec@1e-04': np.float64(1.3204223117707208), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(3874.398), 'precision': tensor(0.4505, device='cuda:0'), 'recall': tensor(0.6851, device='cuda:0'), 'f1_score': tensor(0.5365, device='cuda:0')}
+Epoch 20, global step 386400: 'auc@10' was not in top 3
+2026-03-28 17:37:32.147 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6373422277772096), 'auc@10': np.float64(0.7701254650840184), 'auc@20': np.float64(0.8617377599264214), 'prec@1e-04': np.float64(0.8815822792944832), 'rec@1e-04': np.float64(1.3767113917631886), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(4055.902666666667), 'precision': tensor(0.4551, device='cuda:0'), 'recall': tensor(0.7163, device='cuda:0'), 'f1_score': tensor(0.5511, device='cuda:0')}
+Epoch 21, global step 404800: 'auc@10' reached 0.77013 (best 0.77013), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma/version_10/checkpoints/epoch=21-auc@5=0.637-auc@10=0.770-auc@20=0.862.ckpt' as top 3
+2026-03-28 18:54:21.715 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6125562157311266), 'auc@10': np.float64(0.7457495407221697), 'auc@20': np.float64(0.8399977510343524), 'prec@1e-04': np.float64(0.8631651991545501), 'rec@1e-04': np.float64(1.3712860202891772), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(4109.316666666667), 'precision': tensor(0.4313, device='cuda:0'), 'recall': tensor(0.6992, device='cuda:0'), 'f1_score': tensor(0.5275, device='cuda:0')}
+Epoch 22, global step 423200: 'auc@10' was not in top 3
+2026-03-28 20:10:50.530 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6279894721240923), 'auc@10': np.float64(0.7583737282915549), 'auc@20': np.float64(0.8504383569221797), 'prec@1e-04': np.float64(0.8885426058581255), 'rec@1e-04': np.float64(1.3555217772512436), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(3948.478), 'precision': tensor(0.4542, device='cuda:0'), 'recall': tensor(0.7037, device='cuda:0'), 'f1_score': tensor(0.5462, device='cuda:0')}
+Epoch 23, global step 441600: 'auc@10' was not in top 3
+2026-03-28 21:27:30.883 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6277215673917605), 'auc@10': np.float64(0.756030669590259), 'auc@20': np.float64(0.848298781116074), 'prec@1e-04': np.float64(0.878768582893375), 'rec@1e-04': np.float64(1.373296555358899), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(4044.3233333333333), 'precision': tensor(0.4455, device='cuda:0'), 'recall': tensor(0.7059, device='cuda:0'), 'f1_score': tensor(0.5403, device='cuda:0')}
+Epoch 24, global step 460000: 'auc@10' was not in top 3
+2026-03-28 22:43:45.556 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6329031690741582), 'auc@10': np.float64(0.7630448675756673), 'auc@20': np.float64(0.8555989479558666), 'prec@1e-04': np.float64(0.8792512508468332), 'rec@1e-04': np.float64(1.391455165318188), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(4095.952), 'precision': tensor(0.4460, device='cuda:0'), 'recall': tensor(0.7130, device='cuda:0'), 'f1_score': tensor(0.5429, device='cuda:0')}
+Epoch 25, global step 478400: 'auc@10' was not in top 3
+2026-03-28 23:59:45.837 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6346322367466154), 'auc@10': np.float64(0.7646561304995758), 'auc@20': np.float64(0.857493845700094), 'prec@1e-04': np.float64(0.8814127661057127), 'rec@1e-04': np.float64(1.388113696025665), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(4075.9553333333333), 'precision': tensor(0.4488, device='cuda:0'), 'recall': tensor(0.7146, device='cuda:0'), 'f1_score': tensor(0.5456, device='cuda:0')}
+Epoch 26, global step 496800: 'auc@10' was not in top 3
+2026-03-29 01:15:27.850 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6335775297113726), 'auc@10': np.float64(0.7634706263400649), 'auc@20': np.float64(0.8558984930703687), 'prec@1e-04': np.float64(0.887099260030636), 'rec@1e-04': np.float64(1.3948885449687423), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(4069.66), 'precision': tensor(0.4480, device='cuda:0'), 'recall': tensor(0.7142, device='cuda:0'), 'f1_score': tensor(0.5450, device='cuda:0')}
+Epoch 27, global step 515200: 'auc@10' was not in top 3
+2026-03-29 02:31:11.106 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6332090444280476), 'auc@10': np.float64(0.7617388945227652), 'auc@20': np.float64(0.8551875137209006), 'prec@1e-04': np.float64(0.8881289563692853), 'rec@1e-04': np.float64(1.3916503173924708), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(4058.162), 'precision': tensor(0.4526, device='cuda:0'), 'recall': tensor(0.7160, device='cuda:0'), 'f1_score': tensor(0.5490, device='cuda:0')}
+Epoch 28, global step 533600: 'auc@10' was not in top 3
+2026-03-29 03:46:42.329 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.6323830454216068), 'auc@10': np.float64(0.7646908816021756), 'auc@20': np.float64(0.8576084409047798), 'prec@1e-04': np.float64(0.8886676556829711), 'rec@1e-04': np.float64(1.3925729854189481), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(4056.7653333333333), 'precision': tensor(0.4524, device='cuda:0'), 'recall': tensor(0.7166, device='cuda:0'), 'f1_score': tensor(0.5489, device='cuda:0')}
+Epoch 29, global step 552000: 'auc@10' was not in top 3
+`Trainer.fit` stopped: `max_epochs=30` reached.
+Epoch 29/29 ━━━━━━━━━━━━━━━━ 18400/18400 1:08:38 •        4.48it/s v_num: 10.000
+                                         0:00:00                                
+/home/ly/9100pro/Reg/JamMa/src/jamma/utils/utils.py:17: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  @torch.cuda.amp.custom_fwd(cast_inputs=torch.float32)
+/home/ly/miniconda3/envs/jamma/lib/python3.10/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+{'accelerator': 'ddp',
+ 'batch_size': 2,
+ 'benchmark': True,
+ 'check_val_every_n_epoch': 1,
+ 'ckpt_path': '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma/version_10/checkpoints/epoch=21-auc@5=0.637-auc@10=0.770-auc@20=0.862.ckpt',
+ 'data_cfg_path': 'configs/data/minima_finetune_832.py',
+ 'disable_ckpt': False,
+ 'dump_dir': None,
+ 'exp_name': 'jamma_minima_finetune',
+ 'flush_logs_every_n_steps': 200,
+ 'gpus': 1,
+ 'limit_val_batches': 1.0,
+ 'log_every_n_steps': 200,
+ 'main_cfg_path': 'configs/jamma/outdoor/final.py',
+ 'max_epochs': 30,
+ 'num_nodes': 1,
+ 'num_sanity_val_steps': 10,
+ 'num_workers': 4,
+ 'parallel_load_data': False,
+ 'pin_memory': True,
+ 'profiler_name': None}
+Seed set to 66
+2026-04-06 21:57:01.067 | INFO     | src.lightning.lightning_jamma:__init__:53 - Load '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma/version_10/checkpoints/epoch=21-auc@5=0.637-auc@10=0.770-auc@20=0.862.ckpt' as pretrained checkpoint
+number of params: 5.874339
+2026-04-06 21:57:01.067 | INFO     | __main__:main:71 - LoFTR LightningModule initialized!
+2026-04-06 21:57:01.067 | INFO     | __main__:main:75 - LoFTR DataModule initialized!
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+2026-04-06 21:57:01.102 | INFO     | __main__:main:120 - Trainer initialized!
+2026-04-06 21:57:01.102 | INFO     | __main__:main:121 - Start training!
+You are using a CUDA device ('NVIDIA GeForce RTX 5090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+Initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/1
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 1 processes
+----------------------------------------------------------------------------------------------------
+
+2026-04-06 21:57:01.553845: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-04-06 21:57:01.580265: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-06 21:57:02.100221: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-04-06 21:57:02.159 | INFO     | src.lightning.data:setup:130 - [rank:0] world_size: 1
+2026-04-06 21:57:02.159 | INFO     | src.lightning.data:_setup_dataset:216 - [rank 0]: 23 scene(s) assigned.
+[rank:0] loading train datasets:   0%|          | 0/23 [00:00<?, ?it/s][rank:0] loading train datasets:   4%|▍         | 1/23 [00:00<00:06,  3.64it/s][rank:0] loading train datasets:   9%|▊         | 2/23 [00:00<00:03,  5.58it/s][rank:0] loading train datasets:  22%|██▏       | 5/23 [00:00<00:01, 12.38it/s]2026-04-06 21:57:04.075 | WARNING  | src.datasets.megadepth:__init__:52 - [0008_0.3_0.5] dropped 16631/26037 invalid pairs due to missing image/depth files; kept 9406 pairs.
+[rank:0] loading train datasets:  30%|███       | 7/23 [00:01<00:05,  3.01it/s][rank:0] loading train datasets:  39%|███▉      | 9/23 [00:02<00:03,  4.30it/s][rank:0] loading train datasets:  48%|████▊     | 11/23 [00:03<00:04,  2.59it/s][rank:0] loading train datasets:  52%|█████▏    | 12/23 [00:05<00:07,  1.41it/s][rank:0] loading train datasets:  61%|██████    | 14/23 [00:05<00:04,  2.10it/s][rank:0] loading train datasets:  65%|██████▌   | 15/23 [00:06<00:04,  1.97it/s][rank:0] loading train datasets:  70%|██████▉   | 16/23 [00:06<00:02,  2.38it/s]2026-04-06 21:57:08.501 | WARNING  | src.datasets.megadepth:__init__:52 - [0008_0.5_0.7] dropped 2250/3682 invalid pairs due to missing image/depth files; kept 1432 pairs.
+[rank:0] loading train datasets:  83%|████████▎ | 19/23 [00:06<00:01,  3.98it/s][rank:0] loading train datasets:  91%|█████████▏| 21/23 [00:07<00:00,  3.98it/s]2026-04-06 21:57:09.698 | WARNING  | src.datasets.megadepth:__init__:52 - [0008_0.1_0.3] dropped 95451/147515 invalid pairs due to missing image/depth files; kept 52064 pairs.
+[rank:0] loading train datasets: 100%|██████████| 23/23 [00:07<00:00,  3.95it/s][rank:0] loading train datasets: 100%|██████████| 23/23 [00:07<00:00,  3.05it/s]
+2026-04-06 21:57:09.699 | INFO     | src.lightning.data:_setup_dataset:216 - [rank 0]: 5 scene(s) assigned.
+[rank:0] loading val datasets:   0%|          | 0/5 [00:00<?, ?it/s][rank:0] loading val datasets: 100%|██████████| 5/5 [00:00<00:00, 152.08it/s]
+2026-04-06 21:57:09.732 | INFO     | src.lightning.data:setup:180 - [rank:0] Train & Val Dataset loaded!
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┓
+┃   ┃ Name     ┃ Type           ┃ Params ┃ Mode  ┃ FLOPs ┃
+┡━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━┩
+│ 0 │ backbone │ CovNextV2_nano │  650 K │ train │     0 │
+│ 1 │ matcher  │ JamMa          │  5.2 M │ train │     0 │
+│ 2 │ loss     │ Loss           │      0 │ train │     0 │
+└───┴──────────┴────────────────┴────────┴───────┴───────┘
+Trainable params: 5.9 M                                                         
+Non-trainable params: 0                                                         
+Total params: 5.9 M                                                             
+Total estimated model params size (MB): 23                                      
+Modules in train mode: 204                                                      
+Modules in eval mode: 0                                                         
+Total FLOPs: 0                                                                  
+2026-04-06 21:57:09.760 | INFO     | src.lightning.data:val_dataloader:350 - [rank:0/1]: Val Sampler and DataLoader re-init.
+/home/ly/miniconda3/envs/jamma/lib/python3.10/site-packages/pytorch_lightning/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+2026-04-06 21:57:21.868 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 2 unique items...
+{'auc@5': np.float64(0.0), 'auc@10': np.float64(0.0), 'auc@20': np.float64(0.3679896413720913), 'prec@1e-04': np.float64(0.5997284699568223), 'rec@1e-04': np.float64(0.471825318756265), 'max_matches@1e-04': np.float64(3272.0), 'num_matches@1e-04': np.float64(2639.0), 'precision': tensor(0.2122, device='cuda:0'), 'recall': tensor(0.1775, device='cuda:0'), 'f1_score': tensor(0.1899, device='cuda:0')}
+/home/ly/miniconda3/envs/jamma/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/logger_connector/result.py:433: It is recommended to use `self.log('auc@5', ..., sync_dist=True)` when logging on epoch level in distributed setting to accumulate the metric across devices.
+/home/ly/miniconda3/envs/jamma/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/logger_connector/result.py:433: It is recommended to use `self.log('auc@10', ..., sync_dist=True)` when logging on epoch level in distributed setting to accumulate the metric across devices.
+/home/ly/miniconda3/envs/jamma/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/logger_connector/result.py:433: It is recommended to use `self.log('auc@20', ..., sync_dist=True)` when logging on epoch level in distributed setting to accumulate the metric across devices.
+2026-04-06 21:57:21.887 | INFO     | src.lightning.data:train_dataloader:337 - [rank:0/1]: Train Sampler and DataLoader re-init (should not re-init between epochs!).
+/home/ly/miniconda3/envs/jamma/lib/python3.10/site-packages/pytorch_lightning/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+/home/ly/miniconda3/envs/jamma/lib/python3.10/site-packages/torch/autograd/graph.py:865: UserWarning: The AccumulateGrad node's stream does not match the stream of the node that produced the incoming gradient. This may incur unnecessary synchronization and break CUDA graph capture if the AccumulateGrad node's stream is the default stream. This mismatch is caused by an AccumulateGrad node created prior to the current iteration being kept alive. This can happen if the autograd graph is still being kept alive by tensors such as the loss, or if you are using DDP, which will stash a reference to the node. To resolve the mismatch, delete all references to the autograd graph or ensure that DDP initialization is performed under the same stream as subsequent forwards. If the mismatch is intentional, you can use torch.autograd.graph.set_warn_on_accumulate_grad_stream_mismatch(False) to suppress this warning. (Triggered internally at /pytorch/torch/csrc/autograd/input_buffer.cpp:240.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+2026-04-06 22:09:51.412 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.0717158638312538), 'auc@10': np.float64(0.1540974715742324), 'auc@20': np.float64(0.28523391621444694), 'prec@1e-04': np.float64(0.7589191012213692), 'rec@1e-04': np.float64(0.20107093647579102), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(604.5866666666667), 'precision': tensor(0.2713, device='cuda:0'), 'recall': tensor(0.3756, device='cuda:0'), 'f1_score': tensor(0.3091, device='cuda:0')}
+Epoch 0, global step 1150: 'auc@10' reached 0.15410 (best 0.15410), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma_minima_finetune/version_1/checkpoints/epoch=0-auc@5=0.072-auc@10=0.154-auc@20=0.285.ckpt' as top 3
+2026-04-06 22:20:33.006 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.06682609295786084), 'auc@10': np.float64(0.1423303141919518), 'auc@20': np.float64(0.2547328239796526), 'prec@1e-04': np.float64(0.8086927413924063), 'rec@1e-04': np.float64(0.22866166683740732), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(666.2346666666666), 'precision': tensor(0.2987, device='cuda:0'), 'recall': tensor(0.3923, device='cuda:0'), 'f1_score': tensor(0.3326, device='cuda:0')}
+Epoch 1, global step 2300: 'auc@10' reached 0.14233 (best 0.15410), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma_minima_finetune/version_1/checkpoints/epoch=1-auc@5=0.067-auc@10=0.142-auc@20=0.255.ckpt' as top 3
+2026-04-06 22:30:19.794 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.06236320952554177), 'auc@10': np.float64(0.13305379803335846), 'auc@20': np.float64(0.2432313657562271), 'prec@1e-04': np.float64(0.8089824691555623), 'rec@1e-04': np.float64(0.21955366738598692), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(634.314), 'precision': tensor(0.3056, device='cuda:0'), 'recall': tensor(0.4001, device='cuda:0'), 'f1_score': tensor(0.3395, device='cuda:0')}
+Epoch 2, global step 3450: 'auc@10' reached 0.13305 (best 0.15410), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma_minima_finetune/version_1/checkpoints/epoch=2-auc@5=0.062-auc@10=0.133-auc@20=0.243.ckpt' as top 3
+2026-04-06 22:41:37.500 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.05752719582666062), 'auc@10': np.float64(0.13783116449477673), 'auc@20': np.float64(0.25543128817716226), 'prec@1e-04': np.float64(0.822034232192831), 'rec@1e-04': np.float64(0.29147831781112293), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(852.4646666666666), 'precision': tensor(0.3019, device='cuda:0'), 'recall': tensor(0.4146, device='cuda:0'), 'f1_score': tensor(0.3430, device='cuda:0')}
+Epoch 3, global step 4600: 'auc@10' reached 0.13783 (best 0.15410), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma_minima_finetune/version_1/checkpoints/epoch=3-auc@5=0.058-auc@10=0.138-auc@20=0.255.ckpt' as top 3
+2026-04-06 22:51:09.643 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.05995819707802787), 'auc@10': np.float64(0.13122312640337427), 'auc@20': np.float64(0.23988475638822582), 'prec@1e-04': np.float64(0.8213321102350702), 'rec@1e-04': np.float64(0.24636066184286406), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(708.46), 'precision': tensor(0.3320, device='cuda:0'), 'recall': tensor(0.4047, device='cuda:0'), 'f1_score': tensor(0.3557, device='cuda:0')}
+Epoch 4, global step 5750: 'auc@10' was not in top 3
+2026-04-06 23:03:18.760 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.06821396378055823), 'auc@10': np.float64(0.15263080463333742), 'auc@20': np.float64(0.2769642411484802), 'prec@1e-04': np.float64(0.8350695159844468), 'rec@1e-04': np.float64(0.33743996563890777), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(983.7266666666667), 'precision': tensor(0.3248, device='cuda:0'), 'recall': tensor(0.4165, device='cuda:0'), 'f1_score': tensor(0.3572, device='cuda:0')}
+Epoch 5, global step 6900: 'auc@10' reached 0.15263 (best 0.15410), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma_minima_finetune/version_1/checkpoints/epoch=5-auc@5=0.068-auc@10=0.153-auc@20=0.277.ckpt' as top 3
+2026-04-06 23:14:59.109 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.07649287165380025), 'auc@10': np.float64(0.15151810367684887), 'auc@20': np.float64(0.26033591202929773), 'prec@1e-04': np.float64(0.8287831916704096), 'rec@1e-04': np.float64(0.3246591356389655), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(948.6893333333334), 'precision': tensor(0.3131, device='cuda:0'), 'recall': tensor(0.4188, device='cuda:0'), 'f1_score': tensor(0.3514, device='cuda:0')}
+Epoch 6, global step 8050: 'auc@10' reached 0.15152 (best 0.15410), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma_minima_finetune/version_1/checkpoints/epoch=6-auc@5=0.076-auc@10=0.152-auc@20=0.260.ckpt' as top 3
+2026-04-06 23:25:54.372 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.07768517533535503), 'auc@10': np.float64(0.1515497477573975), 'auc@20': np.float64(0.2667280678394369), 'prec@1e-04': np.float64(0.8411531593256899), 'rec@1e-04': np.float64(0.3030325000381463), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(882.2233333333334), 'precision': tensor(0.3247, device='cuda:0'), 'recall': tensor(0.4207, device='cuda:0'), 'f1_score': tensor(0.3588, device='cuda:0')}
+Epoch 7, global step 9200: 'auc@10' reached 0.15155 (best 0.15410), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma_minima_finetune/version_1/checkpoints/epoch=7-auc@5=0.078-auc@10=0.152-auc@20=0.267.ckpt' as top 3
+2026-04-06 23:38:05.792 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.07617745725332839), 'auc@10': np.float64(0.15446405558668505), 'auc@20': np.float64(0.2724332112357145), 'prec@1e-04': np.float64(0.8397910905609287), 'rec@1e-04': np.float64(0.3483179285607518), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(1019.158), 'precision': tensor(0.3174, device='cuda:0'), 'recall': tensor(0.4232, device='cuda:0'), 'f1_score': tensor(0.3553, device='cuda:0')}
+Epoch 8, global step 10350: 'auc@10' reached 0.15446 (best 0.15446), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma_minima_finetune/version_1/checkpoints/epoch=8-auc@5=0.076-auc@10=0.154-auc@20=0.272.ckpt' as top 3
+2026-04-06 23:49:55.976 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.07716160131253112), 'auc@10': np.float64(0.15263892934811804), 'auc@20': np.float64(0.2680751980202522), 'prec@1e-04': np.float64(0.8222540309618493), 'rec@1e-04': np.float64(0.32840853187796293), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(962.2933333333333), 'precision': tensor(0.3031, device='cuda:0'), 'recall': tensor(0.4259, device='cuda:0'), 'f1_score': tensor(0.3478, device='cuda:0')}
+Epoch 9, global step 11500: 'auc@10' reached 0.15264 (best 0.15446), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma_minima_finetune/version_1/checkpoints/epoch=9-auc@5=0.077-auc@10=0.153-auc@20=0.268.ckpt' as top 3
+2026-04-07 00:03:13.566 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.0844817523688948), 'auc@10': np.float64(0.16321190673916158), 'auc@20': np.float64(0.28271340965461567), 'prec@1e-04': np.float64(0.8177927817474386), 'rec@1e-04': np.float64(0.3830501524358472), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(1134.718), 'precision': tensor(0.2894, device='cuda:0'), 'recall': tensor(0.4284, device='cuda:0'), 'f1_score': tensor(0.3393, device='cuda:0')}
+Epoch 10, global step 12650: 'auc@10' reached 0.16321 (best 0.16321), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma_minima_finetune/version_1/checkpoints/epoch=10-auc@5=0.084-auc@10=0.163-auc@20=0.283.ckpt' as top 3
+2026-04-07 00:15:47.051 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.08330815335256289), 'auc@10': np.float64(0.1677317886128704), 'auc@20': np.float64(0.29164995779503117), 'prec@1e-04': np.float64(0.8408149594546406), 'rec@1e-04': np.float64(0.37896176929339054), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(1112.694), 'precision': tensor(0.3064, device='cuda:0'), 'recall': tensor(0.4252, device='cuda:0'), 'f1_score': tensor(0.3498, device='cuda:0')}
+Epoch 11, global step 13800: 'auc@10' reached 0.16773 (best 0.16773), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma_minima_finetune/version_1/checkpoints/epoch=11-auc@5=0.083-auc@10=0.168-auc@20=0.292.ckpt' as top 3
+2026-04-07 00:29:33.490 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.088366234681884), 'auc@10': np.float64(0.16927324820881956), 'auc@20': np.float64(0.2951385681381087), 'prec@1e-04': np.float64(0.8377404743276766), 'rec@1e-04': np.float64(0.4151781852703186), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(1222.3033333333333), 'precision': tensor(0.3103, device='cuda:0'), 'recall': tensor(0.4319, device='cuda:0'), 'f1_score': tensor(0.3544, device='cuda:0')}
+Epoch 12, global step 14950: 'auc@10' reached 0.16927 (best 0.16927), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma_minima_finetune/version_1/checkpoints/epoch=12-auc@5=0.088-auc@10=0.169-auc@20=0.295.ckpt' as top 3
+2026-04-07 00:42:11.519 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.08109464879121982), 'auc@10': np.float64(0.15737111620262817), 'auc@20': np.float64(0.27244293939792), 'prec@1e-04': np.float64(0.8553897986739958), 'rec@1e-04': np.float64(0.3507610618678773), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(1025.5013333333334), 'precision': tensor(0.3231, device='cuda:0'), 'recall': tensor(0.4229, device='cuda:0'), 'f1_score': tensor(0.3585, device='cuda:0')}
+Epoch 13, global step 16100: 'auc@10' was not in top 3
+2026-04-07 00:54:28.973 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.0849814313181964), 'auc@10': np.float64(0.16749282778092925), 'auc@20': np.float64(0.2858783338376188), 'prec@1e-04': np.float64(0.838132327946361), 'rec@1e-04': np.float64(0.36288120209637775), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(1051.654), 'precision': tensor(0.3256, device='cuda:0'), 'recall': tensor(0.4123, device='cuda:0'), 'f1_score': tensor(0.3556, device='cuda:0')}
+Epoch 14, global step 17250: 'auc@10' reached 0.16749 (best 0.16927), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma_minima_finetune/version_1/checkpoints/epoch=14-auc@5=0.085-auc@10=0.167-auc@20=0.286.ckpt' as top 3
+2026-04-07 01:07:05.690 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.07856549366324035), 'auc@10': np.float64(0.15482792334609585), 'auc@20': np.float64(0.2712938366301456), 'prec@1e-04': np.float64(0.8326110799713754), 'rec@1e-04': np.float64(0.35700925986829696), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(1042.0693333333334), 'precision': tensor(0.3157, device='cuda:0'), 'recall': tensor(0.4106, device='cuda:0'), 'f1_score': tensor(0.3478, device='cuda:0')}
+Epoch 15, global step 18400: 'auc@10' was not in top 3
+2026-04-07 01:21:15.987 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.09822817609770085), 'auc@10': np.float64(0.1822351957815897), 'auc@20': np.float64(0.303891072113894), 'prec@1e-04': np.float64(0.8253887067409021), 'rec@1e-04': np.float64(0.4116557552255431), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(1221.4326666666666), 'precision': tensor(0.3126, device='cuda:0'), 'recall': tensor(0.4110, device='cuda:0'), 'f1_score': tensor(0.3467, device='cuda:0')}
+Epoch 16, global step 19550: 'auc@10' reached 0.18224 (best 0.18224), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma_minima_finetune/version_1/checkpoints/epoch=16-auc@5=0.098-auc@10=0.182-auc@20=0.304.ckpt' as top 3
+2026-04-07 01:32:26.993 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.07513659584862512), 'auc@10': np.float64(0.15425457656640362), 'auc@20': np.float64(0.26845053604099), 'prec@1e-04': np.float64(0.8448500957918792), 'rec@1e-04': np.float64(0.34632187926920854), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(1007.952), 'precision': tensor(0.3077, device='cuda:0'), 'recall': tensor(0.4240, device='cuda:0'), 'f1_score': tensor(0.3488, device='cuda:0')}
+Epoch 17, global step 20700: 'auc@10' was not in top 3
+2026-04-07 01:44:10.458 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.0871903410930148), 'auc@10': np.float64(0.1688739486159758), 'auc@20': np.float64(0.2898452223887261), 'prec@1e-04': np.float64(0.8356839076213605), 'rec@1e-04': np.float64(0.37688973779245155), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(1096.0773333333334), 'precision': tensor(0.2956, device='cuda:0'), 'recall': tensor(0.4254, device='cuda:0'), 'f1_score': tensor(0.3425, device='cuda:0')}
+Epoch 18, global step 21850: 'auc@10' reached 0.16887 (best 0.18224), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma_minima_finetune/version_1/checkpoints/epoch=18-auc@5=0.087-auc@10=0.169-auc@20=0.290.ckpt' as top 3
+2026-04-07 01:57:24.987 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.0886924785119169), 'auc@10': np.float64(0.17223546818668867), 'auc@20': np.float64(0.2942530718522751), 'prec@1e-04': np.float64(0.8275162443221655), 'rec@1e-04': np.float64(0.39754335076299807), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(1161.5006666666666), 'precision': tensor(0.3148, device='cuda:0'), 'recall': tensor(0.4033, device='cuda:0'), 'f1_score': tensor(0.3457, device='cuda:0')}
+Epoch 19, global step 23000: 'auc@10' reached 0.17224 (best 0.18224), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma_minima_finetune/version_1/checkpoints/epoch=19-auc@5=0.089-auc@10=0.172-auc@20=0.294.ckpt' as top 3
+2026-04-07 02:11:19.788 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.09205548087698316), 'auc@10': np.float64(0.17502530461171623), 'auc@20': np.float64(0.2913125992336374), 'prec@1e-04': np.float64(0.8159455416850571), 'rec@1e-04': np.float64(0.41565231372932065), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(1236.6313333333333), 'precision': tensor(0.3016, device='cuda:0'), 'recall': tensor(0.4249, device='cuda:0'), 'f1_score': tensor(0.3465, device='cuda:0')}
+Epoch 20, global step 24150: 'auc@10' reached 0.17503 (best 0.18224), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma_minima_finetune/version_1/checkpoints/epoch=20-auc@5=0.092-auc@10=0.175-auc@20=0.291.ckpt' as top 3
+2026-04-07 02:24:37.286 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.08414944315854586), 'auc@10': np.float64(0.16266689316306582), 'auc@20': np.float64(0.28649370400053087), 'prec@1e-04': np.float64(0.8135185695277201), 'rec@1e-04': np.float64(0.405272772056493), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(1197.1093333333333), 'precision': tensor(0.2882, device='cuda:0'), 'recall': tensor(0.4253, device='cuda:0'), 'f1_score': tensor(0.3374, device='cuda:0')}
+Epoch 21, global step 25300: 'auc@10' was not in top 3
+2026-04-07 02:38:18.635 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.08545671850955375), 'auc@10': np.float64(0.16505800553604894), 'auc@20': np.float64(0.2895607450796022), 'prec@1e-04': np.float64(0.8226918928238156), 'rec@1e-04': np.float64(0.41103827097520873), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(1212.302), 'precision': tensor(0.2960, device='cuda:0'), 'recall': tensor(0.4214, device='cuda:0'), 'f1_score': tensor(0.3412, device='cuda:0')}
+Epoch 22, global step 26450: 'auc@10' was not in top 3
+2026-04-07 02:51:31.319 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.08349596157076397), 'auc@10': np.float64(0.1599046385500889), 'auc@20': np.float64(0.2821873032667547), 'prec@1e-04': np.float64(0.8239974782645816), 'rec@1e-04': np.float64(0.40841916871534706), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(1206.3593333333333), 'precision': tensor(0.3041, device='cuda:0'), 'recall': tensor(0.4155, device='cuda:0'), 'f1_score': tensor(0.3425, device='cuda:0')}
+Epoch 23, global step 27600: 'auc@10' was not in top 3
+2026-04-07 02:56:23.901 | WARNING  | src.jamma.matching_module:forward:300 - No matches found in coarse-level.
+2026-04-07 02:56:33.890 | WARNING  | src.jamma.matching_module:forward:300 - No matches found in coarse-level.
+2026-04-07 02:56:36.703 | WARNING  | src.jamma.matching_module:forward:300 - No matches found in coarse-level.
+2026-04-07 03:03:43.731 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.08689904746235273), 'auc@10': np.float64(0.16814810764939722), 'auc@20': np.float64(0.2880975273721304), 'prec@1e-04': np.float64(0.8520391421662352), 'rec@1e-04': np.float64(0.36679379382879057), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(1069.2333333333333), 'precision': tensor(0.3285, device='cuda:0'), 'recall': tensor(0.4029, device='cuda:0'), 'f1_score': tensor(0.3495, device='cuda:0')}
+Epoch 24, global step 28750: 'auc@10' was not in top 3
+2026-04-07 03:16:58.611 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.09589477102145445), 'auc@10': np.float64(0.18950629371101962), 'auc@20': np.float64(0.3192333783577509), 'prec@1e-04': np.float64(0.8517555567354131), 'rec@1e-04': np.float64(0.4094104261148932), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(1185.876), 'precision': tensor(0.3227, device='cuda:0'), 'recall': tensor(0.4012, device='cuda:0'), 'f1_score': tensor(0.3470, device='cuda:0')}
+Epoch 25, global step 29900: 'auc@10' reached 0.18951 (best 0.18951), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma_minima_finetune/version_1/checkpoints/epoch=25-auc@5=0.096-auc@10=0.190-auc@20=0.319.ckpt' as top 3
+2026-04-07 03:29:24.144 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.07273081822018772), 'auc@10': np.float64(0.1444932495911425), 'auc@20': np.float64(0.2597121191059277), 'prec@1e-04': np.float64(0.814508906672213), 'rec@1e-04': np.float64(0.3832752280569011), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(1127.2306666666666), 'precision': tensor(0.3130, device='cuda:0'), 'recall': tensor(0.4149, device='cuda:0'), 'f1_score': tensor(0.3494, device='cuda:0')}
+Epoch 26, global step 31050: 'auc@10' was not in top 3
+2026-04-07 03:44:55.987 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.09477313391092877), 'auc@10': np.float64(0.18760138330782347), 'auc@20': np.float64(0.3175805065153102), 'prec@1e-04': np.float64(0.8268440227008392), 'rec@1e-04': np.float64(0.44835093893331474), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(1323.43), 'precision': tensor(0.2936, device='cuda:0'), 'recall': tensor(0.4151, device='cuda:0'), 'f1_score': tensor(0.3357, device='cuda:0')}
+Epoch 27, global step 32200: 'auc@10' reached 0.18760 (best 0.18951), saving model to '/home/ly/9100pro/Reg/JamMa/jamma_log/jamma_minima_finetune/version_1/checkpoints/epoch=27-auc@5=0.095-auc@10=0.188-auc@20=0.318.ckpt' as top 3
+2026-04-07 03:58:13.397 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.08780921032461851), 'auc@10': np.float64(0.16771988120629464), 'auc@20': np.float64(0.2952023227675574), 'prec@1e-04': np.float64(0.8298799027819723), 'rec@1e-04': np.float64(0.4230027769026102), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(1234.9026666666666), 'precision': tensor(0.3290, device='cuda:0'), 'recall': tensor(0.4007, device='cuda:0'), 'f1_score': tensor(0.3521, device='cuda:0')}
+Epoch 28, global step 33350: 'auc@10' was not in top 3
+2026-04-07 04:11:58.377 | INFO     | src.utils.metrics:aggregate_metrics_train_val:356 - Aggregating metrics over 1500 unique items...
+{'auc@5': np.float64(0.08704229291219927), 'auc@10': np.float64(0.1677134253108797), 'auc@20': np.float64(0.289889523361171), 'prec@1e-04': np.float64(0.788052746796919), 'rec@1e-04': np.float64(0.44498059191946987), 'max_matches@1e-04': np.float64(2685.1786666666667), 'num_matches@1e-04': np.float64(1326.704), 'precision': tensor(0.2791, device='cuda:0'), 'recall': tensor(0.4247, device='cuda:0'), 'f1_score': tensor(0.3323, device='cuda:0')}
+Epoch 29, global step 34500: 'auc@10' was not in top 3
+`Trainer.fit` stopped: `max_epochs=30` reached.
+Epoch 29/29 ━━━━━━━━━━━━━━━━━━ 1150/1150 0:04:37 • 0:00:00 4.17it/s v_num: 1.000
